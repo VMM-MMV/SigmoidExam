@@ -3,8 +3,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+driver = webdriver.Chrome()
+
 def find_info(game_name):
-    driver = webdriver.Chrome()
     
     try:
         # Open the search URL
@@ -41,7 +42,7 @@ def find_info(game_name):
             print("===================================")
 
     finally:
-        driver.quit()
+        pass
 
 games = [
     "Madden NFL 2004",
@@ -54,3 +55,5 @@ games = [
 
 for game in games:
     find_info(game)
+
+driver.quit()
